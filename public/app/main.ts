@@ -1,5 +1,7 @@
-import { bootstrap }    from 'angular2/platform/browser';
+import { bootstrap }    from '@angular/platform-browser-dynamic';
 
-import { HeroesComponent } from './heroes.component';
+import { AppComponent } from './app.component';
+import { appRouterProviders } from './app.routes';
 
-bootstrap(HeroesComponent);
+
+bootstrap(AppComponent);

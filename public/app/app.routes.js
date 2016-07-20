@@ -1,4 +1,4 @@
-System.register(['angular2/router', './heroes.component'], function(exports_1, context_1) {
+System.register(['@angular/router', './heroes.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var router_1, heroes_component_1;
