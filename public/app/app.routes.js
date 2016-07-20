@@ -1,7 +1,7 @@
-System.register(['@angular/router', './heroes.component'], function(exports_1, context_1) {
+System.register(['@angular/router', './heroes.component', './dashboard.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var router_1, heroes_component_1;
+    var router_1, heroes_component_1, dashboard_component_1;
     var routes, appRouterProviders;
     return {
         setters:[
@@ -10,9 +10,21 @@ System.register(['@angular/router', './heroes.component'], function(exports_1, c
             },
             function (heroes_component_1_1) {
                 heroes_component_1 = heroes_component_1_1;
+            },
+            function (dashboard_component_1_1) {
+                dashboard_component_1 = dashboard_component_1_1;
             }],
         execute: function() {
             routes = [
+                {
+                    path: '',
+                    redirectTo: '/dashboard',
+                    pathMatch: 'full'
+                },
+                {
+                    path: 'dashboard',
+                    component: dashboard_component_1.DashboardComponent
+                },
                 {
                     path: 'heroes',
                     component: heroes_component_1.HeroesComponent

@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/router', './hero.service'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,39 +10,28 @@ System.register(['@angular/core', '@angular/router', './hero.service'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, hero_service_1;
-    var AppComponent;
+    var core_1;
+    var DashboardComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
-            function (hero_service_1_1) {
-                hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.title = 'Tour of Heroes';
+            DashboardComponent = (function () {
+                function DashboardComponent() {
                 }
-                AppComponent = __decorate([
+                DashboardComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: "\n  <h1>{{title}}</h1>\n  <a [routerLink]=\"['/heroes']\">Heroes</a>\n  <router-outlet></router-outlet>\n  ",
-                        directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [
-                            hero_service_1.HeroService
-                        ]
+                        selector: 'my-dashboard',
+                        template: '<h3>My Dashboard</h3>'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], DashboardComponent);
+                return DashboardComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("DashboardComponent", DashboardComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=app.dashboard.component.js.map
