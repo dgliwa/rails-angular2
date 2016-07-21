@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,7 +11,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1;
-    var HeroService;
+    var HeroSearchService;
     return {
         setters:[
             function (core_1_1) {
@@ -19,32 +19,25 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
             },
             function (http_1_1) {
                 http_1 = http_1_1;
-            },
-            function (_1) {}],
+            }],
         execute: function() {
-            HeroService = (function () {
-                function HeroService(http) {
+            HeroSearchService = (function () {
+                function HeroSearchService(http) {
                     this.http = http;
-                    this.heroesUrl = 'app/heroes'; // URL to web api
                 }
-                HeroService.prototype.getHeroes = function () {
-                    return this.http.get(this.heroesUrl)
-                        .toPromise()
-                        .then(function (response) { return response.json().data; })
-                        .catch(this.handleError);
+                HeroSearchService.prototype.search = function (term) {
+                    return this.http
+                        .get("app/heroes/?name=" + term + "+")
+                        .map(function (r) { return r.json().data; });
                 };
-                HeroService.prototype.getHero = function (id) {
-                    return this.getHeroes()
-                        .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
-                };
-                HeroService = __decorate([
+                HeroSearchService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], HeroService);
-                return HeroService;
+                ], HeroSearchService);
+                return HeroSearchService;
             }());
-            exports_1("HeroService", HeroService);
+            exports_1("HeroSearchService", HeroSearchService);
         }
     }
 });
-//# sourceMappingURL=hero.service.js.map
+//# sourceMappingURL=hero-search.service.js.map
